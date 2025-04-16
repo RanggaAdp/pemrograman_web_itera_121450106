@@ -15,7 +15,6 @@ Aplikasi ini adalah dashboard sederhana untuk mengelola jadwal kuliah. Pengguna 
 ![Fitur Pengisian Dashboard](./images/2.png)
 ![Hasil Dashboard](./images/3.png)
 
-> Ganti URL placeholder di atas dengan link gambar asli jika tersedia
 
 ## 🧪 Fitur ES6+ yang Diimplementasikan
 - `let` dan `const` digunakan secara konsisten untuk deklarasi variabel

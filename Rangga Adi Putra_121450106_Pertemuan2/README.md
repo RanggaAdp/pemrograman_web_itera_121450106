@@ -1,7 +1,7 @@
 # 📘 Personal Dashboard Jadwal Kuliah
 
 ## 🧩 Deskripsi Singkat
-Aplikasi ini adalah dashboard sederhana untuk mengelola jadwal kuliah pribadi. Pengguna dapat menambahkan, mengedit, dan menghapus jadwal mata kuliah, lengkap dengan hari serta jam masuk dan keluar. Semua data disimpan secara lokal di browser menggunakan `localStorage`, sehingga tidak hilang saat halaman direfresh.
+Aplikasi ini adalah dashboard sederhana untuk mengelola jadwal kuliah. Pengguna dapat menambahkan, mengedit, dan menghapus jadwal mata kuliah, lengkap dengan hari serta jam masuk dan keluar. Semua data disimpan secara lokal di browser menggunakan `localStorage`, sehingga tidak hilang saat halaman direfresh.
 
 ## ⚙️ Fitur Aplikasi
 - Tambah jadwal kuliah dengan mata kuliah, hari, jam masuk, dan jam keluar
@@ -40,8 +40,4 @@ aplikasi/
 1. Buka file `index.html` langsung di browser
 2. Isi form dan tambahkan jadwal kuliah
 3. Data akan otomatis tersimpan di localStorage
-
-## 📌 Catatan
-Jangan gunakan `cdn.tailwindcss.com` di produksi. Untuk produksi, gunakan Tailwind CLI atau PostCSS build.
-
 

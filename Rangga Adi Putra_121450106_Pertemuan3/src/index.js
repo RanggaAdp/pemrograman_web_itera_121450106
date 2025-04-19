@@ -1,17 +1,47 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useContext, useState, useEffect } from "react";
+import { BookContext } from "../../context/BookContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const BookFilter = () => {
+  const { books, setFilteredBooks } = useContext(BookContext);
+  const [status, setStatus] = useState("all");
+  const [search, setSearch] = useState("");
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  useEffect(() => {
+    let filtered = books;
+    if (status !== "all") {
+      filtered = filtered.filter((book) => book.status === status);
+    }
+    if (search.trim()) {
+      filtered = filtered.filter(
+        (book) =>
+          book.title.toLowerCase().includes(search.toLowerCase()) ||
+          book.author.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+    setFilteredBooks(filtered);
+  }, [books, search, status, setFilteredBooks]);
+
+  return (
+    <div className="flex flex-col sm:flex-row gap-4 mt-4 mb-4">
+      <input
+        type="text"
+        placeholder="Cari berdasarkan judul atau penulis..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="border p-2 rounded w-full sm:w-1/2"
+      />
+      <select
+        value={status}
+        onChange={(e) => setStatus(e.target.value)}
+        className="border p-2 rounded w-full sm:w-1/4"
+      >
+        <option value="all">Semua</option>
+        <option value="milik">Dimiliki</option>
+        <option value="baca">Sedang Dibaca</option>
+        <option value="beli">Ingin Dibeli</option>
+      </select>
+    </div>
+  );
+};
+
+export default BookFilter;
